@@ -1,50 +1,111 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/ivan/.zshrc'
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# Path to your oh-my-zsh installation.
+ZSH=/usr/share/oh-my-zsh/
 
-#source ~/.dotfiles/git-extras-completion.zsh
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="min"
 
-# Show git branch on right prompt
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-RPROMPT=%F{green}\$vcs_info_msg_0_%f
-zstyle ':vcs_info:git:*' formats '%b'
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Set default text editor to vim
-export EDITOR=nvim
-export VISUAL="$EDITOR"
-#export PROMPT='[%B%F{red}%n%F{white}@%m%f%b %2~]%(#.#!.%(?.|>.||>)) '
-export PROMPT='%F{white}[%f%F{red}%n%f%F{white}:%2~]%f%(#.%(?.%F{white}#!%f.%F{red}#!%f).%(?.%F{white}|>%f.%F{red}|>%f)) '
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# Aliases
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+)
+
+
+# User configuration
+#
+# source syntax highlighting rules
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# COMPLETION SETTINGS
+# add custom completion scripts
+fpath=(~/.zsh/completion $fpath)
+fpath+=~/.zfunc
+
+# To run installed cabal executables
+export PATH=$PATH:~/.cabal/bin
+export PATH=$PATH:~/.cargo/bin
+export PATH=~/.local/bin:$PATH
+
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
 alias icanhazip="curl icanhazip.com"
 alias ls="ls --color=auto --group-directories-first"
 alias ll="ls -alh"
 alias l.='ls -d .* --color=auto'
-# alias countLines="git ls-files | xargs wc -l"
-alias countLines="echo *(.) | xargs wc -l"
-alias lineCount='wc * -l'
-alias ..="cd .."
-alias ...="cd ../.."
 alias grep="grep --color"
 alias pacupdate="sudo pacman -Syu"
 alias aurupdate="pacaur -Syu"
 alias open="xdg-open"
 alias m='make -j 4'
-alias module='echo'
 alias vim='nvim'
-alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias dotfiles="git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME"
+alias sl='sl -a'
 
 function save {
     cp "$1" "$1.archive"
@@ -54,14 +115,10 @@ function def {
      curl dict://dict.org/d:$1
 }
 
-# To run installed cabal executables
-export PATH=$PATH:~/.cabal/bin
-export PATH=~/.local/bin:$PATH
-export LFS=/mnt/lfs
-
 
 # MOTD
 showerthoughts=$(curl -s --connect-timeout 5 -A '/u/Archal8' \
-'https://www.reddit.com/r/showerthoughts/top.json?sort=top&t=week&limit=100' | \
-python -c 'import sys, random, json; randnum = random.randint(0,99); response = json.load(sys.stdin)["data"]["children"][randnum]["data"]; print ("\n\"" + response["title"] + "\""); print ("      -" + response["author"] + "\n");')
+    'https://www.reddit.com/r/showerthoughts/top.json?sort=top&t=week&limit=100' | \
+    python ~/.zfunc/showerthougths.py )
+
 echo $showerthoughts | cowsay | lolcat

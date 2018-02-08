@@ -11,6 +11,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-surround.git'
+Plugin 'luochen1990/rainbow'
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
 " vim-airlinePlugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline'
@@ -29,15 +31,27 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_python_binary_path = 'python'
 let g:ycm_complete_in_comments = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-"let g:ycm_rust_src_path = '/usr/src/rust/src'
+let g:ycm_global_ycm_extra_conf = "~/.config/nvim/.ycm_extra_conf.py"
+let g:ycm_error_symbol='✗'
+let g:ycm_warning_symbol='▲'
 
 " tabular
 Plugin 'godlygeek/tabular'
 
+" vim stay
+Plugin 'kopischke/vim-stay'
+
+" fast folding
+Plugin 'Konfekt/FastFold'
+nmap zuz <Plug>(FastFoldUpdate)
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+
 " rust lang support
 Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
-let g:racer_cmd = "/usr/bin/racer"
+let g:racer_cmd = "/home/ivan/.cargo/bin/racer"
 let g:rustfmt_autosave = 1
 
 " doxygen plugin!
@@ -77,6 +91,7 @@ set foldenable        " enable folding
 set foldlevelstart=10 " open most folds by default
 set foldnestmax=10    " 10 nested fold max
 set foldmethod=syntax " fold based on indent level
+set viewoptions=cursor,folds,slash,unix " vim stay settings
 nnoremap <space> za   " space open/closes folds
 
 set shiftround  " Round indent to multiple of 'shiftwidth'
