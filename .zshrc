@@ -70,12 +70,13 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # COMPLETION SETTINGS
 # add custom completion scripts
-fpath=(~/.zsh/completion $fpath)
-fpath+=~/.zfunc
+fpath=(~/.config/zsh $fpath)
 
 # To run installed cabal executables
 export PATH=$PATH:~/.cabal/bin
+# To run installed cargo executables
 export PATH=$PATH:~/.cargo/bin
+# To run installed local executables
 export PATH=~/.local/bin:$PATH
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
@@ -94,31 +95,11 @@ export ZSH_AUTOSUGGEST_USE_ASYNC=1
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias icanhazip="curl icanhazip.com"
-alias ls="ls --color=auto --group-directories-first"
-alias ll="ls -alh"
-alias l.='ls -d .* --color=auto'
-alias grep="grep --color"
-alias pacupdate="sudo pacman -Syu"
-alias aurupdate="pacaur -Syu"
-alias open="xdg-open"
-alias m='make -j 4'
-alias vim='nvim'
-alias dotfiles="git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME"
-alias sl='sl -a'
-
-function save {
-    cp "$1" "$1.archive"
-}
-
-function def {
-     curl dict://dict.org/d:$1
-}
-
+source ~/.config/zsh/aliases
 
 # MOTD
 showerthoughts=$(curl -s --connect-timeout 5 -A '/u/Archal8' \
     'https://www.reddit.com/r/showerthoughts/top.json?sort=top&t=week&limit=100' | \
-    python ~/.zfunc/showerthougths.py )
+    python ~/.config/zsh/showerthougths.py )
 
 echo $showerthoughts | cowsay | lolcat

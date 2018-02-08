@@ -1,0 +1,20 @@
+alias icanhazip="curl icanhazip.com"
+alias ls="ls --color=auto --group-directories-first"
+alias ll="ls -alh"
+alias l.='ls -d .* --color=auto'
+alias grep="grep --color"
+alias pacupdate="sudo pacman -Syu"
+alias aurupdate="pacaur -Syu"
+alias open="xdg-open"
+alias m='make -j 4'
+alias vim='nvim'
+alias dotfiles="git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME"
+alias sl='sl -a'
+
+function save {
+    cp "$1" "$1.archive"
+}
+
+function def {
+     curl dict://dict.org/d:$1
+}
