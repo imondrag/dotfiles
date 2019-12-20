@@ -1,0 +1,4 @@
+export ZPLUG_HOME=/usr/share/zsh/scripts/zplug
+export EDITOR=nvim
+export PATH="$HOME/.cargo/bin:$PATH"
+

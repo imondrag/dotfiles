@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+
+# === Plugin Management ===
+
+#source $ZPLUG_HOME/init.zsh
+#source "$HOME/.config/shell/plugins"
+
+
+# === Shell Parts ===
+
+#source "$HOME/.config/shell/exports"
+#source "$HOME/.config/shell/aliases"
+#source "$HOME/.config/shell/functions"
+#source "$HOME/.config/shell/external"
+
+
+# === Local Variables and Overrides ===
+
+if [[ -f "$HOME/.shell_env_local" ]]; then
+  source "$HOME/.shell_env_local"
+fi

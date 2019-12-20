@@ -1,0 +1,32 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- create: ['~/.config']
+
+- link:
+    # Terminal:
+    #~/.config/shell:
+    #  path: shell
+    #  create: true
+
+    ~/.zprofile:
+        path: config/zprofile
+        force: true
+    ~/.zshrc:
+        path: config/zshrc
+        force: true
+
+    # SSH:
+    ~/.ssh/config:
+        path: config/ssh_config
+        force: true
+
+    # Editors:
+    #~/.vimrc: config/editorconfig
+    #~/.nanorc: config/nanorc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

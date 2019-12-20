@@ -1,0 +1,14 @@
+# global options
+Host *
+    ForwardAgent yes
+
+
+Host caen
+    Hostname login-course.engin.umich.edu
+
+Host caen-on-campus
+    Hostname oncampus-course.engin.umich.edu
+
+Host caen*
+    User imondrag
+
