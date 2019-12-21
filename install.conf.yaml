@@ -1,6 +1,7 @@
 - defaults:
     link:
       relink: true
+      force: true
 
 - clean: ['~']
 
@@ -14,10 +15,11 @@
 
     ~/.zprofile:
         path: config/zprofile
-        force: true
     ~/.zshrc:
         path: config/zshrc
-        force: true
+
+    # Git
+    ~/.gitconfig: config/gitconfig
 
     # SSH:
     ~/.ssh/config:
