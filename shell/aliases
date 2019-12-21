@@ -1,0 +1,33 @@
+#! /usr/bin/env zsh
+
+alias less="/usr/share/nvim/runtime/macros/less.sh"
+
+# ls, the common ones I use a lot shortened for rapid fire usage
+alias ls='ls --color --group-directories-first'
+alias l='ls -lFh'     #size,show type,human readable
+alias ll='ls -lAFh'   #long list,show almost all,show type,human readable
+alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
+alias ldot='ls -ld .*'
+alias lS='ls -1FSsh'
+alias lart='ls -1Fcart'
+alias lrt='ls -1Fcrt'
+alias open=xdg-open
+
+alias ..='cd ..'
+
+alias zshrc='$EDITOR ~/.zshrc' # Quick access to the ~/.zshrc file
+alias vimrc='$EDITOR ~/.config/nvim/init.vim'
+
+alias grep='grep --color'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+
+# Safety first
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+
+# Vim aliases
+alias v="env nvim"
+alias vd="env nvim -d"
+alias vp="env nvim -p"

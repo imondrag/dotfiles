@@ -8,9 +8,9 @@
 
 - link:
     # Terminal:
-    #~/.config/shell:
-    #  path: shell
-    #  create: true
+    ~/.config/shell:
+      path: shell
+      create: true
 
     ~/.zprofile:
         path: config/zprofile

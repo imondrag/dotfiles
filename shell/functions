@@ -1,0 +1,29 @@
+#! /usr/bin/env zsh
+
+# Colorful man pages
+function man() {
+  env \
+    LESS_TERMCAP_md=$'\e[1;36m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[1;40;92m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[1;32m' \
+    man "$@"
+}
+
+# swap: Swaps contents of two files
+#    param1: the file to be swapped
+#    param2: the file to be swapped
+function swap() { # swap 2 filenames around
+   if [[ -e "$1" && -e "$2" ]]      # if files exist
+   then
+      local TMPFILE=tmp.$$
+      mv "$1" $TMPFILE
+      mv "$2" "$1"
+      mv $TMPFILE "$2"
+   else
+      echo "Error: Make sure the files exist."
+   fi
+}
+

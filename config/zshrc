@@ -8,9 +8,9 @@
 
 # === Shell Parts ===
 
-#source "$HOME/.config/shell/exports"
-#source "$HOME/.config/shell/aliases"
-#source "$HOME/.config/shell/functions"
+source "$HOME/.config/shell/exports"
+source "$HOME/.config/shell/aliases"
+source "$HOME/.config/shell/functions"
 #source "$HOME/.config/shell/external"
 
 
