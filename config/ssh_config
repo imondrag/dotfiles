@@ -1,7 +1,5 @@
 # global options
-Host *
-    ForwardAgent yes
-
+ForwardAgent yes
 
 Host caen
     Hostname login-course.engin.umich.edu

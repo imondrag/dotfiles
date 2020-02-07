@@ -27,8 +27,7 @@
         force: true
 
     # Editors:
-    #~/.vimrc: config/editorconfig
-    #~/.nanorc: config/nanorc
+    ~/.config/nvim/init.vim: config/init.vim
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

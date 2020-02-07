@@ -1,2 +1,7 @@
 #! /usr/bin/env zsh
 
+export ZPLUG_HOME=/usr/share/zsh/scripts/zplug
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export EDITOR=nvim
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+

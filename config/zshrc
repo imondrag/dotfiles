@@ -42,3 +42,4 @@ source "$HOME/.config/shell/functions"
 if [[ -f "$HOME/.shell_env_local" ]]; then
   source "$HOME/.shell_env_local"
 fi
+
