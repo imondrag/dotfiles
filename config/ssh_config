@@ -10,3 +10,7 @@ Host caen-on-campus
 Host caen*
     User imondrag
 
+Host pine
+    Hostname arch-pine
+    Port 8022
+    User alarm
