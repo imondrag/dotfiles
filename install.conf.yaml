@@ -8,26 +8,35 @@
 - create: ['~/.config']
 
 - link:
-    # Terminal:
+    # Config dir:
     ~/.config/shell:
-      path: shell
+      path: config/shell
       create: true
+
+    ~/.config/nvim:
+        path: config/nvim
+        force: true
+
+    ~/.config/alacritty:
+        path: config/alacritty
+        force: true
+
+
+    # Misc. Config
+    # Git
+    ~/.gitconfig: config/gitconfig
 
     ~/.zprofile:
         path: config/zprofile
     ~/.zshrc:
         path: config/zshrc
 
-    # Git
-    ~/.gitconfig: config/gitconfig
-
     # SSH:
     ~/.ssh/config:
         path: config/ssh_config
         force: true
 
-    # Editors:
-    ~/.config/nvim/init.vim: config/init.vim
 
+# Keep DotBot up-to-date
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
