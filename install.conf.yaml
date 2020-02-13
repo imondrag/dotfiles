@@ -40,3 +40,4 @@
 # Keep DotBot up-to-date
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [config/nvim/download_vimplug.sh, Installing vim-plug]

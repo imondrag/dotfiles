@@ -143,11 +143,6 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 map <C-K> :py3f /usr/share/clang/clang-format.py<cr>
 imap <C-K> <c-o>:py3f /usr/share/clang/clang-format.py<cr>
 
-" Auto commands
-autocmd BufNewFile *.cpp r ~/misc/templates/code/cpp
-autocmd BufNewFile *.c r ~/misc/templates/code/c
-
-au BufRead,BufNewFile *.myasm setfiletype mips
 "close the preview window after completion is done.
 autocmd CompleteDone * pclose!
 
