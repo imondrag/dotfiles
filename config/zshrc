@@ -43,3 +43,5 @@ if [[ -f "$HOME/.shell_env_local" ]]; then
   source "$HOME/.shell_env_local"
 fi
 
+# opam configuration
+test -r /home/ivan/.opam/opam-init/init.zsh && . /home/ivan/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

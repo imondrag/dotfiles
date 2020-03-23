@@ -1,3 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/ivan/src/eecs481/debugging-automation/part_a'
+let g:netrw_dirhist_5='/home/ivan/src/eecs481/debugging-automation'
+let g:netrw_dirhist_4='/home/ivan/src/eecs481/debugging-automation/part_a'
+let g:netrw_dirhist_3='/home/ivan/src/uqueue/web-client/.secrets'
+let g:netrw_dirhist_2='/home/ivan/.local/share/applications'
 let g:netrw_dirhist_1='/home/ivan/.config'
