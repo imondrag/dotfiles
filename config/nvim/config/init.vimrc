@@ -12,7 +12,9 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 
-Plug 'junegunn/fzf' " Multi-entry selection UI.
+" Multi-entry selection UI.
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " editing
 " Plug 'junegunn/vim-easy-align'
@@ -38,7 +40,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " rust
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+"Plug 'racer-rust/vim-racer'
 
 " other
 Plug 'kopischke/vim-stay'

@@ -11,6 +11,7 @@ Host caen*
     User imondrag
 
 Host pine
-    Hostname arch-pine
+    #Hostname arch-pine
+    Hostname 192.168.50.3
     Port 8022
     User alarm

@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/ivan/src/openethereum/rpc/src/v1/tests/mocked'
+let g:netrw_dirhist_7='/home/ivan/.dotfiles/config/nvim/config'
 let g:netrw_dirhist_6='/home/ivan/src/eecs481/debugging-automation/part_a'
 let g:netrw_dirhist_5='/home/ivan/src/eecs481/debugging-automation'
 let g:netrw_dirhist_4='/home/ivan/src/eecs481/debugging-automation/part_a'

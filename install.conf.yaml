@@ -21,6 +21,9 @@
         path: config/alacritty
         force: true
 
+    ~/.config/npm:
+        path: config/npm
+        force: true
 
     # Misc. Config
     # Git

@@ -4,6 +4,7 @@ syntax enable
 set hlsearch
 
 set number
+set signcolumn=yes
 set showmatch   	" highlight matching [{()}]
 
 " folding

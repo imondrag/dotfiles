@@ -45,3 +45,5 @@ fi
 
 # opam configuration
 test -r /home/ivan/.opam/opam-init/init.zsh && . /home/ivan/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
